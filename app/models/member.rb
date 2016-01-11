@@ -1,5 +1,6 @@
 class Member < ApplicationRecord
   has_many :shopreview
+  has_many :designerreview
 
   validates :email, presence: true
   validates :password, presence: true

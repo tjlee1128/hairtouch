@@ -1,5 +1,6 @@
 class Designer < ApplicationRecord
   belongs_to :shop
+  has_many :designerreview
 
   validates :name, presence: true
   validates :phone, presence: true
