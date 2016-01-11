@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
   respond_to :html, :json
 
   def index
@@ -7,5 +9,9 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+  end
+
+  def not_found
+    head status: :not_found
   end
 end
