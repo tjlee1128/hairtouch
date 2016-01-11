@@ -6,8 +6,14 @@ json.end_time @shop.end_time
 json.holiday @shop.holiday
 json.address @shop.address
 json.main_image @shop.main_image
+json.count @shop.shopreview.count
+if @shop.shopreview.count > 0
+  json.grade @shop.shopreview.average(:grade)
+else
+  json.grade 0
+end
 
-json.designers @designers do |d|
+json.designers @shop.designer do |d|
   json.id d.id
   json.name d.name
   json.phone d.phone
@@ -17,11 +23,11 @@ json.designers @designers do |d|
   json.main_image d.main_image
 end
 
-json.reviews @shopreviews do |rv|
-  json.id rv.id
-  json.member_id rv.member_id
-  json.created_at rv.created_at
-  json.detail rv.detail
-  json.image rv.image
-  json.grade rv.grade
+json.reviews @shop.shopreview do |sr|
+  json.id sr.id
+  json.member_name sr.member.name
+  json.created_at sr.created_at
+  json.detail sr.detail
+  json.image sr.image
+  json.grade sr.grade
 end

@@ -7,7 +7,5 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
-    @designers = Designer.where(shop_id: @shop.id)
-    @shopreviews = Shopreview.where(shop_id: @shop.id)
   end
 end
