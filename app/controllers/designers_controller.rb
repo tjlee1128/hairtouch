@@ -8,4 +8,8 @@ class DesignersController < ApplicationController
   def show
     @designer = Designer.find(params[:id])
   end
+
+  def not_found
+    head status: :not_found
+  end
 end
