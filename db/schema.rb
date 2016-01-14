@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111091527) do
+ActiveRecord::Schema.define(version: 20160114075320) do
 
   create_table "designerreviews", force: :cascade do |t|
     t.integer  "designer_id"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 20160111091527) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["shop_id"], name: "index_designers_on_shop_id"
+  end
+
+  create_table "mainregions", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "members", force: :cascade do |t|
@@ -83,6 +89,14 @@ ActiveRecord::Schema.define(version: 20160111091527) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["shopowner_id"], name: "index_shops_on_shopowner_id"
+  end
+
+  create_table "subregions", force: :cascade do |t|
+    t.integer  "mainregion_id"
+    t.text     "name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["mainregion_id"], name: "index_subregions_on_mainregion_id"
   end
 
 end
