@@ -2,6 +2,8 @@ class Shop < ApplicationRecord
   belongs_to :shopowner
   has_many :designer
   has_many :shopreview
+  belongs_to :mainregion
+  belongs_to :subregion
 
   validates :name, presence: true
   validates :phone, presence: true

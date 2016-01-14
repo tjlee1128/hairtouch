@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114075320) do
+ActiveRecord::Schema.define(version: 20160114091234) do
 
   create_table "designerreviews", force: :cascade do |t|
     t.integer  "designer_id"
@@ -86,8 +86,10 @@ ActiveRecord::Schema.define(version: 20160114075320) do
     t.text     "holiday"
     t.text     "address"
     t.text     "main_image"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "mainregion_id"
+    t.integer  "subregion_id"
     t.index ["shopowner_id"], name: "index_shops_on_shopowner_id"
   end
 
