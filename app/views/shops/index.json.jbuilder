@@ -13,7 +13,7 @@ json.array! @shops do |s|
     if s.shopreview.count > 0
       json.grade s.shopreview.average(:grade)
     else
-      json.grade 0
+      json.grade "0"
     end
   end
 end
