@@ -5,6 +5,13 @@ class ShopsController < ApplicationController
 
   def index
     @shops = Shop.all
+    @mainregion = params[:mainregion]
+    @subregion = params[:subregion]
+    if params.key?(:mainregion)
+      @shops = @shops.where(mainregion: @mainregion)
+    elsif params.key?(:subregion)
+      @shops = @shops.where(subregion: @subregion)
+    end
   end
 
   def show
