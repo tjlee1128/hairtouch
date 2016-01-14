@@ -10,7 +10,7 @@ json.review do
   if @designer.designerreview.count > 0
     json.grade @designer.designerreview.average(:grade)
   else
-    json.grade "0"
+    json.grade '0'
   end
 end
 

@@ -11,7 +11,7 @@ json.review do
   if @shop.shopreview.count > 0
     json.grade @shop.shopreview.average(:grade)
   else
-    json.grade "0"
+    json.grade '0'
   end
 end
 
@@ -28,7 +28,7 @@ json.designers @shop.designer do |d|
     if d.designerreview.count > 0
       json.grade d.designerreview.average(:grade)
     else
-      json.grade "0"
+      json.grade '0'
     end
   end
 end
