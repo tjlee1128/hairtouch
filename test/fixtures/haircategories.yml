@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  haircategorycode: 
+  name: MyText
+
+two:
+  haircategorycode: 
+  name: MyText

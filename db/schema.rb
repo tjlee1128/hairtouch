@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114101114) do
+ActiveRecord::Schema.define(version: 20160115042907) do
 
   create_table "designerreviews", force: :cascade do |t|
     t.integer  "designer_id"
@@ -38,6 +38,20 @@ ActiveRecord::Schema.define(version: 20160114101114) do
     t.integer  "mainregion_id"
     t.integer  "subregion_id"
     t.index ["shop_id"], name: "index_designers_on_shop_id"
+  end
+
+  create_table "haircategories", force: :cascade do |t|
+    t.integer  "haircategorycode_id"
+    t.text     "name"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["haircategorycode_id"], name: "index_haircategories_on_haircategorycode_id"
+  end
+
+  create_table "haircategorycodes", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "mainregions", force: :cascade do |t|
