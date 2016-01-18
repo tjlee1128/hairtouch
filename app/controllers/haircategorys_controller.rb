@@ -5,6 +5,13 @@ class HaircategorysController < ApplicationController
 
   def index
     @haircategories = Haircategory.all
+    @code = params[:code]
+
+    if params.key?(:code)
+      @haircategories = @haircategories.where(haircategorycode: @code)
+    else
+      @haircategories = Haircategory.all
+    end
   end
 
   def not_found
