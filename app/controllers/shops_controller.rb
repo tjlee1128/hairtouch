@@ -44,11 +44,11 @@ class ShopsController < ApplicationController
 
   private
 
-    def set_shop
-      @shop = Shop.find(params[:id])
-    end
+  def set_shop
+    @shop = Shop.find(params[:id])
+  end
 
-    def shop_params
-      params.require(:shop).permit(:shopowner_id, :name, :phone, :start_time, :end_time, :holiday, :address, :main_image)
-    end
+  def shop_params
+    params.require(:shop).permit(:shopowner_id, :name)
+  end
 end
