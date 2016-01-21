@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Image</th>
       <th>Shop</th>
       <th>Name</th>
@@ -22,6 +23,7 @@
   <tbody>
     <% @designers.each do |designer| %>
       <tr>
+      	<td><%= designer.id %></td>
       	<td><img src= <%= designer.image.url %>></td>
         <td><%= designer.shop %></td>
         <td><%= designer.name %></td>

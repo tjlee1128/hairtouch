@@ -1,0 +1,62 @@
+<%= form_for @hair, html: { multipart: true } do |f| %>
+  <% if hair.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hair.errors.count, "error") %> prohibited this hair from being saved:</h2>
+
+      <ul>
+      <% hair.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :designer_id %>
+    <%= f.text_field :designer_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mainregion_id %>
+    <%= f.text_field :mainregion_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subregion_id %>
+    <%= f.text_field :subregion_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :haircategorycode_id %>
+    <%= f.text_field :haircategorycode_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :haircategory_id %>
+    <%= f.text_field :haircategory_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_area :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subtitle %>
+    <%= f.text_area :subtitle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :detail %>
+    <%= f.text_area :detail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= file_field_tag "images[]", type: :file, multiple: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

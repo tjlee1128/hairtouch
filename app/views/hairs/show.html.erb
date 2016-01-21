@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <% @hair.hairimages.each do |hi| %>
+    <img src= <%= hi.image.url %>></td>
+  <% end %>
+</p>
+
+<p>
+  <strong>Designer:</strong>
+  <%= @hair.designer %>
+</p>
+
+<p>
+  <strong>Mainregion:</strong>
+  <%= @hair.mainregion %>
+</p>
+
+<p>
+  <strong>Subregion:</strong>
+  <%= @hair.subregion %>
+</p>
+
+<p>
+  <strong>Haircategorycode:</strong>
+  <%= @hair.haircategorycode %>
+</p>
+
+<p>
+  <strong>Haircategory:</strong>
+  <%= @hair.haircategory %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @hair.title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @hair.subtitle %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @hair.detail %>
+</p>
+
+<%= link_to 'Edit', edit_hair_path(@hair) %> |
+<%= link_to 'Back', hairs_path %>

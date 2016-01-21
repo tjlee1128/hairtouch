@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  designer: 
+  mainregion: 
+  subregion: 
+  haircategorycode: 
+  haircategory: 
+  title: MyText
+  subtitle: MyText
+  detail: MyText
+
+two:
+  designer: 
+  mainregion: 
+  subregion: 
+  haircategorycode: 
+  haircategory: 
+  title: MyText
+  subtitle: MyText
+  detail: MyText

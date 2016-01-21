@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121122942) do
+ActiveRecord::Schema.define(version: 20160121130123) do
 
   create_table "designerreviews", force: :cascade do |t|
     t.integer  "designer_id"
@@ -56,6 +56,35 @@ ActiveRecord::Schema.define(version: 20160121122942) do
     t.text     "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "hairimages", force: :cascade do |t|
+    t.integer  "hair_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["hair_id"], name: "index_hairimages_on_hair_id"
+  end
+
+  create_table "hairs", force: :cascade do |t|
+    t.integer  "designer_id"
+    t.integer  "mainregion_id"
+    t.integer  "subregion_id"
+    t.integer  "haircategorycode_id"
+    t.integer  "haircategory_id"
+    t.text     "title"
+    t.text     "subtitle"
+    t.text     "detail"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["designer_id"], name: "index_hairs_on_designer_id"
+    t.index ["haircategory_id"], name: "index_hairs_on_haircategory_id"
+    t.index ["haircategorycode_id"], name: "index_hairs_on_haircategorycode_id"
+    t.index ["mainregion_id"], name: "index_hairs_on_mainregion_id"
+    t.index ["subregion_id"], name: "index_hairs_on_subregion_id"
   end
 
   create_table "mainregions", force: :cascade do |t|

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :hairs
   resources :shops
   resources :designers
 
