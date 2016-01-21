@@ -6,6 +6,7 @@ json.array! @designers do |d|
   json.end_time d.end_time
   json.reservation_type d.reservation_type
   json.main_image d.main_image
+  json.image d.image
 
   json.review do
     json.count d.designerreview.count

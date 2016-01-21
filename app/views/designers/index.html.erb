@@ -1,1 +1,45 @@
-<h1>designers index page!</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Designers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Shop</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Reservation type</th>
+      <th>Main image</th>
+      <th>MainRegion</th>
+      <th>SubRegion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @designers.each do |designer| %>
+      <tr>
+      	<td><img src= <%= designer.image.url %>></td>
+        <td><%= designer.shop %></td>
+        <td><%= designer.name %></td>
+        <td><%= designer.phone %></td>
+        <td><%= designer.start_time %></td>
+        <td><%= designer.end_time %></td>
+        <td><%= designer.reservation_type %></td>
+        <td><%= designer.main_image %></td>
+        <td><%= designer.mainregion_id %></td>
+        <td><%= designer.subregion_id %></td>
+        <td><%= link_to 'Show', designer %></td>
+        <td><%= link_to 'Edit', edit_designer_path(designer) %></td>
+        <td><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Designer', new_designer_path %>

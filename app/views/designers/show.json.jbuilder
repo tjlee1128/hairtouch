@@ -5,6 +5,7 @@ json.start_time @designer.start_time
 json.end_time @designer.end_time
 json.reservation_type @designer.reservation_type
 json.main_image @designer.main_image
+json.image @designer.image
 json.review do
   json.count @designer.designerreview.count
   if @designer.designerreview.count > 0

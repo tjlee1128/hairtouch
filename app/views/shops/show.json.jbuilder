@@ -6,6 +6,7 @@ json.end_time @shop.end_time
 json.holiday @shop.holiday
 json.address @shop.address
 json.main_image @shop.main_image
+json.image @shop.image
 json.review do
   json.count @shop.shopreview.count
   if @shop.shopreview.count > 0
@@ -23,6 +24,7 @@ json.designers @shop.designer do |d|
   json.end_time d.end_time
   json.reservation_type d.reservation_type
   json.main_image d.main_image
+  json.image d.image
   json.review do
     json.count d.designerreview.count
     if d.designerreview.count > 0

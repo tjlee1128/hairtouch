@@ -1,0 +1,67 @@
+<%= form_for(designer) do |f| %>
+  <% if designer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(designer.errors.count, "error") %> prohibited this designer from being saved:</h2>
+
+      <ul>
+      <% designer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shop_id %>
+    <%= f.text_field :shop_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_area :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.text_area :start_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_time %>
+    <%= f.text_area :end_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reservation_type %>
+    <%= f.number_field :reservation_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :main_image %>
+    <%= f.text_area :main_image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mainregion_id %>
+    <%= f.text_area :mainregion_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subregion_id %>
+    <%= f.text_area :subregion_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

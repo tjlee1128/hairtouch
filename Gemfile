@@ -47,5 +47,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'responders', '~> 2.0'
-gem 'rails_12factor', group: :production
-ruby "2.3.0"
+
+# image
+gem "paperclip", '~> 4.3'

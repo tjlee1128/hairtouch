@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115042907) do
+ActiveRecord::Schema.define(version: 20160121122942) do
 
   create_table "designerreviews", force: :cascade do |t|
     t.integer  "designer_id"
@@ -33,10 +33,14 @@ ActiveRecord::Schema.define(version: 20160115042907) do
     t.text     "end_time"
     t.integer  "reservation_type"
     t.text     "main_image"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "mainregion_id"
     t.integer  "subregion_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["shop_id"], name: "index_designers_on_shop_id"
   end
 
@@ -102,10 +106,14 @@ ActiveRecord::Schema.define(version: 20160115042907) do
     t.text     "holiday"
     t.text     "address"
     t.text     "main_image"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "mainregion_id"
     t.integer  "subregion_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["shopowner_id"], name: "index_shops_on_shopowner_id"
   end
 
