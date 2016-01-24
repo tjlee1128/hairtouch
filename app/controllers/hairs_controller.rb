@@ -5,6 +5,12 @@ class HairsController < ApplicationController
 
   def index
     @hairs = Hair.all
+
+    @haircategory_id = params[:haircategory_id]
+    if params.key?(:haircategory_id)
+      @hairs = @hairs.where(haircategory_id: @haircategory_id)
+    end
+
     respond_with(@hairs)
   end
 

@@ -15,6 +15,21 @@ json.review do
   end
 end
 
+json.hairs @designer.hairs do |h|
+  json.id h.id
+  json.designer_id h.designer_id
+  json.mainregion_id h.mainregion_id
+  json.subregion_id h.subregion_id
+  json.haircategorycode_id h.haircategorycode_id
+  json.haircategory_id h.haircategory_id
+  json.title h.title
+  json.subtitle h.subtitle
+  json.detail h.detail
+  json.images h.hairimages do |hi|
+    json.image hi.image
+  end
+end
+
 json.reviews @designer.designerreview do |dr|
   json.id dr.id
   json.member do
